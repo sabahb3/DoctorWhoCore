@@ -13,4 +13,5 @@ public class Episode
     public int DoctorId { get; set; }
 
     public Author Author { get; set; }
+    public Doctor Doctor { get; set; }
 }
