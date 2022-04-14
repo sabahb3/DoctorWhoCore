@@ -4,6 +4,7 @@ using DoctorWho.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoctorWho.Db.Migrations
 {
     [DbContext(typeof(DoctorWhoCoreDbContext))]
-    partial class DoctorWhoCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220414191435_SeedingEnemies")]
+    partial class SeedingEnemies
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,38 +60,6 @@ namespace DoctorWho.Db.Migrations
                     b.HasKey("CompanionId");
 
                     b.ToTable("tblCompanion", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            CompanionId = 1,
-                            CompanionName = "Ameera Ameer",
-                            WhoPlayed = "Ameera Surakji"
-                        },
-                        new
-                        {
-                            CompanionId = 2,
-                            CompanionName = "khalid Ali",
-                            WhoPlayed = "khalid Toma"
-                        },
-                        new
-                        {
-                            CompanionId = 3,
-                            CompanionName = "Aya Khalid",
-                            WhoPlayed = "Aya Jamal"
-                        },
-                        new
-                        {
-                            CompanionId = 4,
-                            CompanionName = "Samar Samer",
-                            WhoPlayed = "Samar Rsas"
-                        },
-                        new
-                        {
-                            CompanionId = 5,
-                            CompanionName = "Duaa Aqel",
-                            WhoPlayed = "Dalal Aqel"
-                        });
                 });
 
             modelBuilder.Entity("DoctorWho.Db.Doctor", b =>
