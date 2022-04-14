@@ -4,6 +4,7 @@ using DoctorWho.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoctorWho.Db.Migrations
 {
     [DbContext(typeof(DoctorWhoCoreDbContext))]
-    partial class DoctorWhoCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220414195250_NoteAsOptional")]
+    partial class NoteAsOptional
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -287,63 +289,6 @@ namespace DoctorWho.Db.Migrations
                     b.ToTable("tblEpisode", (string)null);
 
                     b.HasCheckConstraint("CK_tblEpisode_EpisodeType_Enum", "[EpisodeType] IN (N'Trailer', N'Bonus', N'Full')");
-
-                    b.HasData(
-                        new
-                        {
-                            EpisodeId = 1,
-                            AuthorId = 1,
-                            DoctorId = 2,
-                            EpisodeDate = new DateTime(2009, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EpisodeNumber = 1,
-                            EpisodeType = "Full",
-                            SeriesNumber = 1,
-                            Title = "Welcome"
-                        },
-                        new
-                        {
-                            EpisodeId = 2,
-                            AuthorId = 5,
-                            DoctorId = 1,
-                            EpisodeDate = new DateTime(2009, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EpisodeNumber = 2,
-                            EpisodeType = "Trailer",
-                            SeriesNumber = 1,
-                            Title = "Test"
-                        },
-                        new
-                        {
-                            EpisodeId = 3,
-                            AuthorId = 1,
-                            DoctorId = 0,
-                            EpisodeDate = new DateTime(2005, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EpisodeNumber = 3,
-                            EpisodeType = "Bonus",
-                            SeriesNumber = 1,
-                            Title = "Be Better"
-                        },
-                        new
-                        {
-                            EpisodeId = 4,
-                            AuthorId = 5,
-                            DoctorId = 3,
-                            EpisodeDate = new DateTime(2006, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EpisodeNumber = 1,
-                            EpisodeType = "Full",
-                            SeriesNumber = 2,
-                            Title = "Warnning"
-                        },
-                        new
-                        {
-                            EpisodeId = 5,
-                            AuthorId = 2,
-                            DoctorId = 0,
-                            EpisodeDate = new DateTime(2022, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EpisodeNumber = 2,
-                            EpisodeType = "Bonus",
-                            SeriesNumber = 2,
-                            Title = "Warnning"
-                        });
                 });
 
             modelBuilder.Entity("DoctorWho.Db.EpisodeCompanion", b =>

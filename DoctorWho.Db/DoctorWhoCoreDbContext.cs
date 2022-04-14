@@ -1,3 +1,4 @@
+using DoctorWho.Db.Enumerations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -190,5 +191,60 @@ public class DoctorWhoCoreDbContext: DbContext
                 AuthorName = "Qamar Ashour"
             }
         );
+        modelBuilder.Entity<Episode>().HasData(
+            new Episode
+            {
+                EpisodeId =1, 
+                SeriesNumber = 1,
+                EpisodeNumber = 1,
+                EpisodeType = EpisodeType.Full,
+                Title = "Welcome",
+                EpisodeDate = new DateTime(2009,5,21),
+                DoctorId = 2,
+                AuthorId = 1
+            },
+            new Episode
+            {
+                EpisodeId =2, 
+                SeriesNumber = 1,
+                EpisodeNumber = 2,
+                EpisodeType = EpisodeType.Trailer,
+                Title = "Test",
+                EpisodeDate = new DateTime(2009,5,28),
+                DoctorId = 1,
+                AuthorId = 5
+            },
+            new Episode
+            {
+                EpisodeId =3, 
+                SeriesNumber = 1,
+                EpisodeNumber = 3,
+                EpisodeType = EpisodeType.Bonus,
+                Title = "Be Better",
+                EpisodeDate = new DateTime(2005,6,20),
+                AuthorId = 1
+            },
+            new Episode
+            {
+                EpisodeId =4, 
+                SeriesNumber = 2,
+                EpisodeNumber = 1,
+                EpisodeType = EpisodeType.Full,
+                Title = "Warnning",
+                EpisodeDate = new DateTime(2006,6,22),
+                DoctorId = 3,
+                AuthorId = 5
+            },
+            new Episode
+            {
+                EpisodeId =5, 
+                SeriesNumber = 2,
+                EpisodeNumber = 2,
+                EpisodeType = EpisodeType.Bonus,
+                Title = "Warnning",
+                EpisodeDate = new DateTime(2022,4,22),
+                AuthorId = 2
+            }
+            );
     }
 }
