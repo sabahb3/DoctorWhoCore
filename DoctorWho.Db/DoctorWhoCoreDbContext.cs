@@ -222,6 +222,7 @@ public class DoctorWhoCoreDbContext: DbContext
                 EpisodeType = EpisodeType.Bonus,
                 Title = "Be Better",
                 EpisodeDate = new DateTime(2005,6,20),
+                DoctorId = 1,
                 AuthorId = 1
             },
             new Episode
@@ -243,6 +244,7 @@ public class DoctorWhoCoreDbContext: DbContext
                 EpisodeType = EpisodeType.Bonus,
                 Title = "Warnning",
                 EpisodeDate = new DateTime(2022,4,22),
+                DoctorId = 3,
                 AuthorId = 2
             }
             );
