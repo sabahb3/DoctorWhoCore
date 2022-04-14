@@ -5,6 +5,7 @@ public class Episode
     public Episode()
     {
         EpisodesEnemies = new List<EpisodeEnemy>();
+        EpisodesCompanions = new List<EpisodeCompanion>();
     }
     public int EpisodeId { get; set; }
     public int SeriesNumber { get; set; }
@@ -18,5 +19,6 @@ public class Episode
 
     public Author Author { get; set; }
     public Doctor Doctor { get; set; }
-    public List<EpisodeEnemy> EpisodesEnemies { get; set; }
+    public ICollection<EpisodeEnemy> EpisodesEnemies { get; set; }
+    public ICollection<EpisodeCompanion> EpisodesCompanions { get; set; }
 }
