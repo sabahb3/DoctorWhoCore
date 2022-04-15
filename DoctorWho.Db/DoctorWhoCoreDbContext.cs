@@ -33,6 +33,14 @@ public class DoctorWhoCoreDbContext: DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Author>().ToTable("tblAuthor");
+        modelBuilder.Entity<Doctor>().ToTable("tblDoctor");
+        modelBuilder.Entity<Enemy>().ToTable("tblEnemy");
+        modelBuilder.Entity<Companion>().ToTable("tblCompanion");
+        modelBuilder.Entity<Episode>().ToTable("tblEpisode");
+        modelBuilder.Entity<EpisodeCompanion>().ToTable("tblEpisodeCompanion");
+        modelBuilder.Entity<EpisodeEnemy>().ToTable("tblEpisodeEnemy");
+        
         modelBuilder.Entity<EpisodeCompanion>().HasKey(e => new {e.EpisodeId, e.CompanionId});
         modelBuilder.Entity<EpisodeEnemy>().HasKey(e => new {e.EpisodeId, e.EnemyId});
         modelBuilder.Entity<Episode>().Property(e => e.EpisodeType).HasConversion<string>();
